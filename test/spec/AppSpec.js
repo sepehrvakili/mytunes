@@ -27,9 +27,19 @@ describe('App', function() {
     expect(app.get('currentSong')).to.equal(app.get('library').at(0));
   });
 
-  xit('queues the next song when an "enqueue" event is fired', function() {
+  it('queues the next song when an "enqueue" event is fired', function() {
     app.get('library').at(1).enqueue();
     expect(app.get('songQueue').at(0)).to.equal(app.get('library').at(1));
   });
+
+  it('dequeues a song when a "dequeue" event is fired', function() {
+    app.get('library').at(0).enqueue();
+    app.get('library').at(1).enqueue();
+    // app.get('library').at(2).enqueue();
+    app.get('songQueue').at(0).dequeue();
+    
+    expect(app.get('songQueue').at(0)).to.equal(app.get('library').at(1));
+  });
+
 
 });
