@@ -7,7 +7,7 @@ var SongQueueView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html('<th>SongQueue</th>');
+    this.$el.html('<th>Your Playlist</th>');
     this.collection.forEach(this.renderSong, this);
     return this.$el;
   },

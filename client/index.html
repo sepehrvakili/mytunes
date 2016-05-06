@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+
+  </head>
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
@@ -29,11 +33,28 @@
         var app = new AppModel({library: library});
 
         // build a view for the top level of the whole app
-        var appView = new AppView({model: app});
+        var appView = new AppView({model: app, el: $('#main') });
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        appView.render();
       });
     </script>
+
+    <div id="main">
+<!--       <div id="player">
+        <audio id="player" controls autoplay />
+      </div> -->
+      <div id="photo">
+      </div>
+      <div id="songQ" class="selectBg">
+        <th>SongQueue</th>
+      </div>
+      <div id="libHeader">
+      </div>
+      <div id="library">
+      </div>
+
+    </div>
+
   </body>
 </html>
