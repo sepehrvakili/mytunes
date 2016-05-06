@@ -56,7 +56,7 @@ audio {
   overflow-y: scroll;
   overflow-x: none;
   background-color: #030408;
-  clear: both;
+  /*clear: both;*/
   opacity: 0.8;
 }
 #songQ::-webkit-scrollbar {
